@@ -1,0 +1,9 @@
+*__latexindent*
+*.aux
+*.fdb*
+*.fls
+*.out
+*.pdf
+*.toc
+*.log
+*.synctex.gz

@@ -1,0 +1,33 @@
+\documentclass{article}
+% Ein einfaches Schema für einen schnellen und einfachen Start mit LaTeX.
+% Benutzt hier die Dokumentklasse ''article''.
+% Weitere mögliche Dokumentklassen: ''book'' (unterstützt z.B. parts und chapters), ''beamer'' (für Präsentationen à la PowerPoint) 
+% Enjoy! andreas.leiser@fhnw.ch
+
+% Hier lade ich ein paar essentielle Packages.
+% Füge in gleicher Weise weitere bei Bedarf hinzu: 
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{color}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{datetime}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+\setlength\parindent{0pt} % keine Textparagraph-Einrückung in diesem Dokument, da ich das nicht mag :-)
+
+\title{Mein Titel}
+%\subtitle{Mein Untertitel} % Bei der Dokumentklasse ''book'' 
+\author{Mein(e) Name(n) \\ Modul TBD, Klasse TBD}
+\date{\today} % Hier kann auch das ''\today'' durch ein fixes Datum ersetzt werden
+
+\begin{document}
+\maketitle	
+\tableofcontents
+
+\input{"./src/content.tex"}
+
+\end{document}	

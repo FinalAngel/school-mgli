@@ -1,0 +1,78 @@
+\newpage % erzwingt einen Seitenumbruch	
+\section{Mein erster Abschnitt}
+
+\subsection{Mein erster Unterabschnitt}
+
+\subsubsection{Mein erster Unter-Unterabschnitt}
+
+
+\section{Ein paar wichtige Befehle um Mathematik zu schreiben}
+
+Mathematische Notation wird z.B. durch das \$ (Dollarzeichen) eingeschlossen: 
+
+Dies ist eine Formel $x^2$ inline, d.h., innerhalb des Textflusses welche durch \$ ... \$ nur je durch ein \$-Zeichen eingeschlossen wird (siehe Quellcode).
+
+Und dies ist eine $$f_1 = g_2$$ vom Textfluss abgesetzte Formel, welche in zwei \$\$ ... \$\$ eingeschlossen wird. Will man eine Formel automatisch nummerieren lassen, dann kann man das so tun:
+
+Das ist noch mehr text 3125891
+
+\begin{align}
+	f(x) &:= 2 \cos(x) 
+\end{align}
+
+Das \&-Zeichen im LaTeX-Quellcode regelt hier die Ausrichtung bei mehreren Zeilen, zwei Backslashes markieren den Zeilenumbruch in der ''align''-Umgebung:
+
+\begin{align}
+	f(x) &= 2 \cos(x) \\
+	g(x) &= 3 \sin(x)
+\end{align}		
+
+Formeln ausrichten, aber ohne Nummerierung geht mit dem align-Stern-Befehl im LaTeX-Quellcode:
+
+\begin{align*}
+	f(x) &= \alpha \cos(x) \\
+	g(x) &= \beta \sin(x)
+\end{align*}		
+
+\section{Ein paar wichtige schnelle Textformatierungen}
+
+Das ist ein \textcolor{red}{roter Text}. Dies ist ein {\itshape kursiver Textteil} und dies ist ein {\bfseries fetter Textteil}. 
+
+\subsection{Unnumerierte Liste}
+
+\begin{itemize}
+	\item Dies ist der erste Punkt einer Liste.
+  	\item Dies der zweite Punkt.
+  	\item Solche Listen können auch geschachtelt werden.
+\end{itemize} 
+
+\subsection{Nummerierte Liste}
+
+\begin{enumerate}
+	\item Dies ist der erste Punkt einer nummerierten Liste.
+	\item Dies der zweite Punkt.
+	\item Auch solche Listen können geschachtelt werden.
+\end{enumerate}  		
+
+
+\section{Eine einfache Tabelle}
+
+\begin{center}
+	\begin{tabular}{ccc}
+		a & b & d	\\ \hline
+		d & f & e
+	\end{tabular}
+\end{center}
+
+Die \&-Zeichen markieren die Spalten, zwei Backslashes markieren Zeilenumbrüche. Das Option \texttt{ccc} im Quellcode besagt ''drei Spalten, jede ''centered ausgerichtet''. 
+
+\section{Ausblick}
+
+\begin{itemize}
+	\item Eine sehr umfassende Liste von LaTeX-Symbolen: \\
+		\href{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}
+	\item LaTeX-Project: \\
+		\href{https://www.latex-project.org}{https://www.latex-project.org}
+\end{itemize}	
+		
+Es gibt noch sehr, sehr viel mehr und es lassen sich viele Dinge auch sehr praktisch automatisieren. Siehe LaTeX-Manuals, Google-Suche oder Frage an mich :-)
