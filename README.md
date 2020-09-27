@@ -1,5 +1,7 @@
 # mgli
 
+You need to save the `template.tex` file to regenerate the PDF. You can open the intergrated PDF Viewer from VSCode to see live updates.
+
 ## Installation
 
 - Install a LaTeX distribution like [TeX Live](https://www.tug.org/texlive/)
