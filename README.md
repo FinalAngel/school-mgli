@@ -22,7 +22,6 @@ As I'm using MacOS as my primary system, I documented my installation procedure:
 - `sudo tlmgr install latexmk`
 - `sudo tlmgr install latexindent`
 - `sudo tlmgr install chktex`
-- `sudo tlmgr install tikz`
 - `code --install-extension James-Yu.latex-workshop`
 
 I still get **Formatting failed** warnings when saving, even though the output
@@ -30,13 +29,13 @@ log shows no errors. Something to fix at some point ¯\\\_(ツ)\_/¯.
 
 ## Timeline
 
-- Gruppenarbeit 1, Abgabe 13.10.2020 (06.10.2020 Draft)
+- **Gruppenarbeit 1, Abgabe 13.10.2020** (06.10.2020 Draft)<br />
   Angelo: Aussagenlogik, Fabian: Prädikate, Reto: Mengenlehre
-- Gruppenarbeit 2, Abgabe 10.11.2020 (03.11.2020 Draft)
+- **Gruppenarbeit 2, Abgabe 10.11.2020** (03.11.2020 Draft)<br />
   Relationen und Funktionen, Graphen
-- Gruppenarbeit 3, Abgabe 05.01.2020 (29.12.2020 Draft)
+- **Gruppenarbeit 3, Abgabe 05.01.2020** (29.12.2020 Draft)<br />
   Vollständige Induktion, Beweismethoden, Rekursion
-- Gruppenarbeit 4, Abgabe 12.01.2020
+- **Gruppenarbeit 4, Abgabe 12.01.2020**<br />
   Formale Sprachen und Automaten, Grammatiken
 
 ## Resources

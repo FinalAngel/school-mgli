@@ -322,7 +322,7 @@ zu vereinfachen. Dabei können wir folgende Rechenregeln nutzen:
 
 \begin{align}
 \fbox{\begin{minipage}{11.8cm}
-  \textbf{Beispiel}: $(A \lor \neg B) \land (A \lor B)$\\
+  \textbf{Beispiel}: \hspace{17.4mm} $(A \lor \neg B) \land (A \lor B)$\\
   Distributivgesetz: \hspace{5mm} $(A \land A) \lor (A \land B) \lor (\neg B \land A) \lor (\neg B \land B)$\\
   Identitätsgesetze: \hspace{5.5mm} $(A \land B) \lor (\neg B \land A)$\\
   Kommutativgesetze: \hspace{1mm} $(A \land B) \lor (A \land \neg B)$\\
@@ -385,9 +385,33 @@ $\bigvee \limits_{i=1}^n \bigwedge \limits_{j=1}^{m_i} L_{ij}$ \par
 
 \subsection{Belegung und Modelle}
 
-* Was ist die Belegung
-* Was sind Modelle
+Wenn $Var$ eine gewisse Anzahl von atomaren Formeln bezeichnet, ist die
+\textbf{Belegung} von $A$ immer dann wahr oder falsch, wenn alle atomare Formeln 
+den Wahrheitswert 1 bzw. 0 besitzen.
+\vspace{5mm}
+
+Ein \textbf{Modell} für eine aussagenlogische Formel $f$ ist eine Belegung
+die immer wahr ergibt: $A(f) = true$.
 
 \subsection{Erfüllbarkeitseigenschaften}
 
-* Was sind diese und Beispiele
+Aussagelogische Formeln können wir aufgrund ihrer Erfüllbarkeitseigenschaften
+einteilen, dabei prüfen wir ihre Wahrheitstabelle:
+
+\begin{itemize}
+  \item Eine Formel ist erfüllbar, wenn sie mindestens ein Modell besitzt
+        welches wahr erbibt. Falls dies nicht der Fall ist, dann ist sie ein 
+        \textbf{Wiederspruch / Kontradiktion} und somit unerfüllbar.
+  \item Sind alle Formeln in einem Modell wahr, dann nennen wir Sie eine
+        \textbf{Tautologie} oder eine allgemein-gültige Formel.
+  \item Falls minstestens ein Modell falsch ist, dann ist es eine
+        \textbf{falsifizierbare} Formel.
+  \item Wenn es weder eine Tautologie oder eine Kontradiktion ist, dann ist
+        sie eine \textbf{Neutralität}.
+\end{itemize}
+
+Die Frage ob eine Formel erfüllbar ist, nennen wir
+\textbf{Erfüllbarkeitsproblem} oder \textbf{SAT} (satisfiability).
+\vspace{5mm}
+
+Die Frage ob es ein Tautologieproblem ist, nennen wir \textbf{TAUT}.
