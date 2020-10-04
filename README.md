@@ -22,6 +22,7 @@ As I'm using MacOS as my primary system, I documented my installation procedure:
 - `sudo tlmgr install latexmk`
 - `sudo tlmgr install latexindent`
 - `sudo tlmgr install chktex`
+- `sudo tlmgr install tikz`
 - `code --install-extension James-Yu.latex-workshop`
 
 I still get **Formatting failed** warnings when saving, even though the output
@@ -37,3 +38,12 @@ log shows no errors. Something to fix at some point ¯\\\_(ツ)\_/¯.
   Vollständige Induktion, Beweismethoden, Rekursion
 - Gruppenarbeit 4, Abgabe 12.01.2020
   Formale Sprachen und Automaten, Grammatiken
+
+## Resources
+
+Some helpful resources:
+
+- http://www.math.union.edu/~niefiels/old/Symbols.pdf
+- https://patrick-robrecht.de/downloads/latex-kurzreferenz.pdf
+- https://de.wikibooks.org/wiki/LaTeX-Kompendium:_F%C3%BCr_Mathematiker
+- https://www.overleaf.com/learn/latex/Paragraphs_and_new_lines

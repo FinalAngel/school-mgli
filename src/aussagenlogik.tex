@@ -2,54 +2,386 @@
 
 \subsection{Einführung}
 
-* Was ist eine logische Aussage
-* Was ist keine logische Aussage
-* Atomare Formeln
+Die Logik formalisiert, wie man über etwas exakt spricht, denkt und 
+kommuniziert. Damit werden die Themen worüber man spricht, präzisiert
+und unzweideutig formalisiert. Man nennt dies auch die 
+"\textbf{Formale Wissenschaft}".
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: Ein Computer-Chip Hersteller benötigt klare, formale 
+  Spezifikationen (Logik) für seine Produkte, bevor die Hardware in 
+  die Herstellung gelangt. Ansonsten werden Fehler sehr kostspielig.
+\end{minipage}}
+\end{align}
+
+Wir bezeichnen sommit eine logische Aussage als Satz, der entweder
+\textbf{true} oder \textbf{false} audrückt. Dabei unterscheiden wir die
+\textbf{Elementaraussage} (oder auch atomare Aussage/Formel) und die
+\textbf{zusammengesetzte Aussage}, welche aus einzelnen Teilaussagen
+besteht.
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Hinweis}: In der Logik/Informatik gibt es Probleme, die keine
+  aussagekräftige Antworten haben. Man weiss also nicht, ob es
+  entscheidbar/beweisbar ist.
+\end{minipage}}
+\end{align}
+
+Beispiele von logischen Aussagen:
+
+\begin{itemize}
+  \item Es sind gerade 15 grad (wahr)
+  \item Die Erde ist flach (falsch)
+  \item 4 plus 4 ist 8 (wahr)
+  \item x ist eine ungerade Zahl\\
+        \textbf{Achtung}: dies ist eine Aussageform aber keine Aussage)
+\end{itemize}
+
+Weitere Definitionen:
+
+\begin{itemize}
+  \item \textbf{Atomare Aussage}\\
+        $A$, ein enzelnes (kleinstes) Element
+  \item \textbf{Atomare Formel}\\
+        $Var = { A, B, C }$, Ansammlung atomarer Aussagen
+  \item \textbf{Induktion}\\
+        $Var = { A, B, C } = f$, um dann folgendes zu definieren: $\lnot f$
+  \item \textbf{Gesamtheiten}\\
+        $F_{AL}$, Gesamtheit aller aussagenlogischer Formeln\\
+        $Var(f)$, Gesamtheit aller atomaren Formeln einer aussagenlogischen 
+        Formel
+  \item \textbf{Literal} ist eine atomare Formel oder deren Negation
+\end{itemize}
+
+\newpage
 
 \subsection{Konnektoren, Junktoren und Operatoren}
 
-* Liste der Konnektoren und Junktoren
-* Ordnung
-* Anwendung
-* Beispiele (Wahrheitstabelle)
-* XOR!
-* Verallgemeinerung
+\def\arraystretch{1.5}
+\begin{table}[ht]
+\begin{tabular}[t]{ll}
+\hline
+  Kürzel & Definition\\
+\hline
+  $A, B$ & Variabeln\\
+  $\land$ & Konjunktion, logisches UND\\
+  $\lor$ & Diskunktion, logisches ODER\\
+  $\lnot$A oder $\bar{A}$ & Negation\\
+  $\Rightarrow$ & Implikation ($A$ = Prämisse, $B$ = Konklusion)\\
+  $\iff$ & Äquivalenz\\
+\hline
+\end{tabular}
+\end{table}
+
+Dabei gilt die folgende Bindungsstärke:
+
+\begin{enumerate}
+  \item $\lnot$ \hspace{11.5mm} Negation
+  \item $\land$ $\lor$ \hspace{8mm} Konkunktion \& Disjunktion
+  \item $\Rightarrow$ $\iff$ \hspace{1mm} Implikation \& Äquivalenz
+\end{enumerate}
+
+Wenn wir diese Regeln verletzen, müssen wir das gewünschte Ergebniss
+mit einer Klammer $()$ kennzeichnen.
+
+\subsubsection{Konjunktion, Disjunktion und Negation}
+
+Nachfolgend stellen wir die Wahrheitstabellen der Konkunktion,
+Disjunktion und Negation anhand von $A$ und $B$ dar:
+
+\begin{table}[ht]
+\begin{tabular}{c|c||c}
+  A & B & A $\land$ B \\ \hline
+  0 & 0 & 0 \\
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  1 & 1 & 1 \\
+\end{tabular}
+\quad
+\begin{tabular}{c|c||c}
+  A & B & A $\lor$ B \\ \hline
+  0 & 0 & 0 \\
+  0 & 1 & 1 \\
+  1 & 0 & 1 \\
+  1 & 1 & 1 \\
+\end{tabular}
+\quad
+\begin{tabular}{c|c||c}
+  A & B & $\lnot$(A $\lor$ B) \\ \hline
+  0 & 0 & 1 \\
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  1 & 1 & 0 \\
+\end{tabular}
+\end{table}
+
+Die Konjunktion \& Disjunktion können wir auch verallgemeinert darstellen:
+
+\vspace{2mm}
+Konjunktion:
+\hspace{5mm}
+$\bigwedge \limits_{i=1}^n A_i := A_1 \land A_2 \land ... \land A_n$ \par
+\vspace{2mm}
+
+Disjunktion:
+\hspace{6.4mm}
+$\bigvee \limits_{i=1}^n A_i := A_1 \lor A_2 \lor ... \lor A_n$ \par
 
 \subsubsection{Äquivalent und Implikation}
 
-$\alpha$
+Grundsätzlich können wir mit $\land$, $\lor$ und $\lnot$ alle Fälle
+abdecken. Wir definieren aber auch noch die Äquivalent und die Implikation:
 
-This is some $\frac{2}{4}$
+\begin{table}[ht]
+\begin{tabular}{c|c||c}
+  A & B & A $\iff$ B \\ \hline
+  0 & 0 & 1 \\
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  1 & 1 & 1 \\
+\end{tabular}
+\quad
+\begin{tabular}{c|c||c}
+  A & B & A $\Rightarrow$ B \\ \hline
+  0 & 0 & 1 \\
+  0 & 1 & 1 \\
+  1 & 0 & 0 \\
+  1 & 1 & 1 \\
+\end{tabular}
+\quad
+\begin{tabular}{c|c||c}
+  $\lnot$A & $\lnot$B & A $\Rightarrow$ B \\ \hline
+  0 & 0 & 1 \\
+  0 & 1 & 0 \\
+  1 & 0 & 1 \\
+  1 & 1 & 1 \\
+\end{tabular}
+\end{table}
 
-* Speziell hervorheben
+Die Äquivalenz ist selbsterklärend, Wenn $A$ gleich ist wie $B$, dann ergibt die
+Aussage \textbf{true}. Die Implikation ist etwas komplexer: aus $A$ folgt $B$:
 
-\subsection{Semantik und Syntax}
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: Als Grundlage nehmen wir die folgende Aussage: $A \to$ 
+  $"$Ich hab Lust auf Pizza$"$ und $B \to$ $"$Ich gehe einkaufen".
+  Nun analysieren wir aus $A \to B$:
+  \begin{itemize}
+    \item Ich hab Lust auf Pizza (wahr), also gehe ich einkaufen (wahr)
+          \\ = \textbf{true} (ist eine wahre Aussage)
+    \item Ich hab Lust auf Asiatisch (falsch, da nur wahr wenn Pizza), also
+          gehe ich einkaufen (wahr)
+          \\ = \textbf{true} (ist eine wahre Aussage)
+    \item Ich keine Lust auf Pizza (falsch), bleibe daher zuhause (falsch)
+          \\ = \textbf{true} (ist eine wahre Aussage)
+    \item Ich hab Lust auf Pizza (wahr), also gehe ich nicht einkaufen (falsch)
+          \\ = \textbf{false} (ist eine falsche Aussage)
+  \end{itemize}
+  Dies lässt sich nun auch logisch auf die Negation der Implikation anwenden.
+\end{minipage}}
+\end{align}
 
-* Kurze Einführung
+\subsubsection{Exklusive Oder}
 
-\subsubsection{Semantik}
+Das exklusive Oder ($XOR$) ist die Umkehroperation der Äquivalenz:
 
-* Definition Semantik
+\begin{table}[ht]
+\begin{tabular}{c|c||c}
+  A & B & $A$ $\dot {\lor }$ $B$ \\ \hline
+  0 & 0 & 0 \\
+  0 & 1 & 1 \\
+  1 & 0 & 1 \\
+  1 & 1 & 0 \\
+\end{tabular}
+\quad
+\begin{tabular}{l}
+  Oft wird auch folgende Schreibweise genutzt:\\
+  $XOR := \dot {\lor } := \lnot(A \iff B)$
+\end{tabular}
+\end{table}
+
+\newpage
+
+\subsection{Syntax und Semantik}
+
+Die \textbf{Semantik} definiert die Bedeutungslehre, wie ich eine
+logische Aussage intepretieren kann. Der \textbf{Syntax} definiert dabei
+Regeln, sowie die elementaren Zeichen oder Symbolgruppen.
 
 \subsubsection{Syntax}
 
-* Definition Syntax
+Wir fragen uns:
+
+\begin{quotation}
+  Ist diese logische Aussage/Formel formale/strukturell korrekt?
+\end{quotation}
+
+Zwei formeln $f$ und $g$ sind syntaktisch gleich, wenn sie aus der gleichen
+Zeichenreihenfolge bestehen. Wir schreiben dann:
+
+\begin{align}
+  f = g
+\end{align}
+
+Die Syntax kann dabei aus einem sogenannten Ableitungsbaum gelesen werden:
+
+\begin{align}
+  f = (A \lor B) \land \lnot C
+\end{align}
+
+\begin{align}
+\begin{tikzpicture}[nodes={draw, circle}, -]
+\node{$\land$}
+  child { node {$\lor$} 
+      child { node {A} }
+      child { node {B} }
+  }
+  child [missing]
+  child [missing]
+  child { node {$\lnot$} 
+      child { node {C} }
+  };
+\end{tikzpicture}
+\end{align}
+
+\subsubsection{Semantik}
+
+Wir fragen uns:
+
+\begin{quotation}
+  Was bedeutet diese logische Aussage/Formel?
+\end{quotation}
+
+Zwei formeln $f$ und $g$ sind semantisch gleich (Äquivalent), wenn ihre
+Wahrheitstabelle identisch sind. Wir schreiben dann:
+
+\begin{align}
+  f \equiv g
+\end{align}
+
+\newpage
+
+Neben der Darstellung im Ableitungsbaum können wir ebenfalls die
+Wahrheitstabelle nutzen:
+
+\begin{table}[ht]
+\begin{tabular}{c|c|c||c}
+  A & B & C & $f = (A \lor B) \land \lnot C$ \\ \hline
+  0 & 0 & 0 & $(0) \land 1 = \textbf{0}$ \\
+  0 & 0 & 1 & $(0) \land 0 = \textbf{0}$ \\
+  0 & 1 & 0 & $(1) \land 1 = \textbf{1}$ \\
+  0 & 1 & 1 & $(1) \land 0 = \textbf{0}$ \\
+  1 & 0 & 0 & $(1) \land 1 = \textbf{1}$ \\
+  1 & 0 & 1 & $(1) \land 0 = \textbf{0}$ \\
+  1 & 1 & 0 & $(1) \land 1 = \textbf{1}$ \\
+  1 & 1 & 1 & $(1) \land 0 = \textbf{0}$ \\
+\end{tabular}
+\end{table}
 
 \subsection{Rechenregeln}
 
-* 8 Regeln mit Beispielen
+Da Formeln recht lange werden können, müssen wir Möglichkeiten suchen, diese
+zu vereinfachen. Dabei können wir folgende Rechenregeln nutzen:
+
+\begin{enumerate}
+  \item \textbf{Tautologie}: $true := A \lor \lnot A$
+  \item \textbf{Kontradiktion}: $false := A \land \lnot A$
+\end{enumerate}
+
+\def\arraystretch{1.5}
+\begin{table}[ht]
+\begin{tabular}[t]{ll}
+\hline
+  Name & Gesetz\\
+\hline
+  Idempotenzgesetze &
+  $f \land f \equiv f$ \hspace{25.4mm} $f \lor f \equiv f$\\
+  Kommutativgesetze &
+  $f \land g \equiv g \land f$ \hspace{20mm} $f \lor g \equiv g \lor f$\\
+  Identitätsgesetze &
+  $f \land true \equiv f$ \hspace{20.8mm} $f \lor false \equiv f$\\
+  &
+  $f \land false \equiv false$ \hspace{12.8mm} $f \lor true \equiv true$\\
+  Assoziativgesetze &
+  $(f \land g) \land h \equiv f \land (g \land h)$
+  \hspace{3mm}
+  $(f \lor g) \lor h \equiv f \lor (g \lor h)$\\
+  Absorptionsgesetze &
+  $f \land (f \lor g) \equiv f$ \hspace{17.2mm} $f \lor (f \land g) \equiv f$\\
+  Distributivgesetze &
+  $f \land (g \lor h) \equiv (f \land g) \lor (f \land h)$\\
+  De Morgan Gesetze &
+  $\neg(f \land g) \equiv \neg f \lor \neg g$\\
+  Negationsgesetz &
+  $\neg \neg f \equiv f$\\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: $(A \lor \neg B) \land (A \lor B)$\\
+  Distributivgesetz: \hspace{5mm} $(A \land A) \lor (A \land B) \lor (\neg B \land A) \lor (\neg B \land B)$\\
+  Identitätsgesetze: \hspace{5.5mm} $(A \land B) \lor (\neg B \land A)$\\
+  Kommutativgesetze: \hspace{1mm} $(A \land B) \lor (A \land \neg B)$\\
+  Dsitributivgesetze: \hspace{5mm} $A \land (B \lor \neg B)$\\
+  Identitätsgesetze: \hspace{7mm} $A$
+\end{minipage}}
+\end{align}
 
 \subsection{Normalformen}
 
-* Kurze Einführung
+Jede aussagelogische Formel lässt sich in KNF oder DNF umwandeln. Dafür
+können wir in der Wahrheitstabelle alle \textbf{0}-Einträge für die KNF 
+zusammenfassen und \textbf{1}-Einträge für die DNF.
 
 \subsubsection{Konjunktive Normalform (KNF)}
 
-* Definition und Beispiele
+Eine \textbf{Klausel} der konjunktiven Normalform entspricht der folgenden 
+Form, wobei $m \geq 1$ und $L_i$ Literale sind:
+
+\begin{align}
+  f = (L_1 \lor L_2 \lor ... \lor L_m)
+\end{align}
+
+Die \textbf{konjunktive Normalform (KNF)} setzt sich dann aus $f_i$ zusammen
+und wird dabei immer in der $\land$ Form (Konjunktion) dargestellt:
+
+\begin{align}
+  f = f_1 \land f_2 \land ... \land f_n
+\end{align}
 
 \subsubsection{Disjunktive Normalform (DNF)}
 
-* Definition und Beispiele
+Eine \textbf{Klausel} der disjunktiven Normalform entspricht der folgenden 
+Form, wobei $m \geq 1$ und $L_i$ Literale sind:
+
+\begin{align}
+  f = (L_1 \land L_2 \land ... \land L_m)
+\end{align}
+
+Die \textbf{disjunktive Normalform (DNF)} setzt sich dann aus $f_i$ zusammen
+und wird dabei immer in der $\lor$ Form (Disjunktion) dargestellt:
+
+\begin{align}
+  f = f_1 \lor f_2 \lor ... \lor f_n
+\end{align}
+
+Auch hierfür gibt es die folgendne Abkürzungen:
+
+\vspace{2mm}
+KNF:
+\hspace{5mm}
+$\bigwedge \limits_{i=1}^n \bigvee \limits_{j=1}^{m_i} L_{ij}$ \par
+\vspace{2mm}
+
+DNF:
+\hspace{5mm}
+$\bigvee \limits_{i=1}^n \bigwedge \limits_{j=1}^{m_i} L_{ij}$ \par
+
+\newpage
 
 \subsection{Belegung und Modelle}
 
