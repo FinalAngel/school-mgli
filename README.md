@@ -26,3 +26,14 @@ As I'm using MacOS as my primary system, I documented my installation procedure:
 
 I still get **Formatting failed** warnings when saving, even though the output
 log shows no errors. Something to fix at some point ¯\\\_(ツ)\_/¯.
+
+## Timeline
+
+- Gruppenarbeit 1, Abgabe 13.10.2020 (06.10.2020 Draft)
+  Angelo: Aussagenlogik, Fabian: Prädikate, Reto: Mengenlehre
+- Gruppenarbeit 2, Abgabe 10.11.2020 (03.11.2020 Draft)
+  Relationen und Funktionen, Graphen
+- Gruppenarbeit 3, Abgabe 05.01.2020 (29.12.2020 Draft)
+  Vollständige Induktion, Beweismethoden, Rekursion
+- Gruppenarbeit 4, Abgabe 12.01.2020
+  Formale Sprachen und Automaten, Grammatiken
