@@ -1,47 +1,84 @@
 \documentclass[../gruppenarbeit_1.tex]{subfiles}
-
 \begin{document}
-
-\section{Praedikatenlogik}
-
-\textbf{Was sind Praedikate?}
-\\
-\\Bsp. Aussage über ein mathematisches Objekt: A≔5 ist eine ungerade Zahl
-\\
-\\Eine Aussage bestand bisher immer daraus, etwas über die Eigenschaft eines Objekts zu sagen. Solche Aussagen werden in der Mathematik «Praedikate» genannt.
-\\
-\\Die Zuordnung eines Praedikats wird wie folgt dargestellt: P(x). P ist das Praedikat, wobei x das Objekt ist.
-\\
-\\\textbf{Definintion von verschiedenen Praedikaten}
-\\
-\\Enthaelt ein Praedikat mehrere Objektvariablen, so nennen wir unser Praedikat «n-stelliges Praedikat» oder eine «n-stellige Aussageform». Wenn jedoch eine Aussage keine Variable enthaelt, reden wir von einem «0-stelligen Praedikat».
-\\
-\\Bsp.1: n-stelliges Praedikat: Q(x,\ y) := «x ist Automarke und y ist das Modell». Das Praedikat Q(VW,\ Golf) ist wahr, wobei Q(Toyota,\ Polo) falsch ist.
-\\
-\\Bsp.2: V(3)∶= «3 ist eine ungerade Zahl» ist eine Aussage und somit ein 0-stelliges Praedikat.
-\\
-\\\textbf{Aequivalenz von zwei Praedikaten}
-\\
-\\Wenn alle Objektvariablenbelegungen dieselben Wahrheitswerte haben, dann wird das folgendermassen dargestellt: P(x) <==> Q(x) oder P(x) ==> Q(x) und Q(x) ==> P(x)
-\\
-\\Bsp.: P(x)∶= «x ist durch 20 teilbar» und Q(x)∶= «x ist durch 4 und 5 teilbar». Dann ist P(x) <==> Q(x).
-\\
-\\Jedoch nicht, wenn: P(x) eine Primzahl ist und Q(x) eine ungerade natuerliche Zahl ist.
-\\
-\\\textbf{Quantoren}
-\\
-\\Wenn P irgendein Praedikat ist und x eine Objektvariable einer bestimmten Objektklasse, dann gilt: «für alle x gilt P(x)» die wird folgendermassen geschrieben: Ax:P(x)
-\\
-\\Das Symbol A wird auch Allquantor oder Generalisator oder Generalisator-Operator genannt.
-\\
-\\Wenn es mindestens ein x gibt, also: «es gibt (mind.) ein x, so dass P(x) gilt», dann schreibt man: Ex:P(x)
-\\
-\\Das Symbol E wird Existenzquantor oder Partikularisator genannt.
-\\
-\\Wenn es jedoch genau nur ein Objekt gibt, dann: «es gibt genau ein x, so dass P(x) gilt». Dies wird wie folgt dargestellt: E!x:P(x).
-\\
-\\Das Symbol E! wird Eindeutigkeitsquantor oder Einzigkeitsquantor genannt.
-\\
-\\\textbf{Ausserdem: Ein Quantor bindet staerker als alle anderen logischen Operatoren!!!}
-\\
+    \section{Prädikatenlogik}
+    \textbf{Was sind Prädikate?}
+    \\
+    \begin{align}
+        \fbox{\begin{minipage}{11.8cm}
+                  \textbf{Beispiel 1}: Bsp. Aussage über ein mathematisches Objekt: $A≔5$ ist eine ungerade Zahl.
+        \end{minipage}}
+    \end{align}
+    \\Eine Aussage bestand bisher immer daraus, etwas über die Eigenschaft eines Objekts zu sagen. Solche Aussagen werden in der Mathematik «Prädikate» genannt.
+    \\
+    \\Die Zuordnung eines Prädikats wird wie folgt dargestellt: $P(x)$. $P$ ist das Prädikat, wobei $x$ das Objekt ist.
+    \\
+    \\\textbf{Definintion von verschiedenen Prädikaten}
+    \\
+    \\Enthält ein Prädikat mehrere Objektvariablen, so nennen wir unser Prädikat «n-stelliges Prädikat» oder eine «n-stellige Aussageform». Wenn jedoch eine Aussage keine Variable enthält, reden wir von einem «0-stelligen Prädikat».
+    \begin{align}
+        \fbox{\begin{minipage}{11.8cm}
+                  \textbf{Beispiel 1}: n-stelliges Prädikat: $Q(x,\ y) :=$ «x ist Automarke und y ist das Modell». Das Prädikat $Q(VW,\ Golf)$ ist wahr, wobei $Q(Toyota,\ Polo)$ falsch ist.
+        \end{minipage}}
+    \end{align}
+    \\
+    \begin{align}
+        \fbox{\begin{minipage}{11.8cm}
+                  \textbf{Beispiel 2}: $V(3)∶=$ «3 ist eine ungerade Zahl» ist eine Aussage und somit ein 0-stelliges Prädikat.
+        \end{minipage}}
+    \end{align}
+    \\\textbf{Äquivalenz von zwei Prädikaten}
+    \\
+    \\Wenn alle Objektvariablenbelegungen dieselben Wahrheitswerte haben, dann wird das folgendermassen dargestellt: $P(x) \iff Q(x) oder P(x) \Rightarrow Q(x) und Q(x) \Rightarrow P(x)$
+    \begin{align}
+        \fbox{\begin{minipage}{11.8cm}
+                  \textbf{Beispiel}: $P(x)∶=$ «$x$ ist durch 20 teilbar» und $Q(x)∶=$ «$x$ ist durch 4 und 5 teilbar». Dann ist $P(x) <==> Q(x)$.
+        \end{minipage}}
+    \end{align}
+    \\Jedoch nicht, wenn: $P(x)$ eine Primzahl ist und $Q(x)$ eine ungerade natürliche Zahl ist.
+    \\
+    \\\textbf{Quantoren}
+    \\
+    \def\arraystretch{1.5}
+    \begin{table}[ht]
+        \begin{tabular}[t]{ll}
+            \hline
+            Kürzel & Definition\\
+            \hline
+            $\forall x$ & Für alle x\\
+            $\exists x$ & Es gibt mindestens ein x\\
+            $\exists!$ & Es gibt nur ein x\\
+            \hline
+        \end{tabular}
+    \end{table}
+    \\
+    \\Wenn $P$ irgendein Prädikat ist und $x$ eine Objektvariable einer bestimmten Objektklasse, dann gilt: «für alle $x$ gilt $P(x)$» die wird folgendermassen geschrieben: $\forall x:P(x)$
+    \\
+    \\Das Symbol $\forall$ wird auch Allquantor oder Generalisator oder Generalisator-Operator genannt.
+    \\
+    \\Wenn es mindestens ein $x$ gibt, also: «es gibt (mind.) ein $x$, so dass $P(x)$ gilt», dann schreibt man: $\exists x:P(x)$
+    \\
+    \\Das Symbol $\exists$ wird Existenzquantor oder Partikularisator genannt.
+    \\
+    \\Wenn es jedoch genau nur ein Objekt gibt, dann: «es gibt genau ein $x$, so dass $P(x)$ gilt». Dies wird wie folgt dargestellt: $\exists! x:P(x)$.
+    \\
+    \\Das Symbol $\exists!$ wird Eindeutigkeitsquantor oder Einzigkeitsquantor genannt.
+    \\
+    \\\textbf{Ausserdem: Ein Quantor bindet stärker als alle anderen logischen Operatoren!!!}
+    \\
+    \begin{align}
+        \fbox{\begin{minipage}{11.8cm}
+                  \textbf{Beispiel für die Verneinung}: $\neg \forall xPx\leftrightarrow \exists x\neg Px$: Die Aussage: Alle Wände sind weiss läst sich auch als "Nicht alle Wände sind weiss", und als "Es gibt mindestens eine Wand, die nicht weiss ist".
+        \end{minipage}}
+    \end{align}
+    \def\arraystretch{1.5}
+    \begin{table}[ht]
+        \begin{tabular}[t]{ll}
+            \hline
+            Distributivgestze der Prädikate\\
+            \hline
+            $\forall x(Px\wedge Qx)\leftrightarrow (\forall xPx\wedge \forall xQx)$\\
+            ${\displaystyle \exists x(Px\lor Qx)\leftrightarrow (\exists xPx\lor \exists xQx)}$\\
+            \hline
+        \end{tabular}
+    \end{table}
 \end{document}
