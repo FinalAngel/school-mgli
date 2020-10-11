@@ -80,27 +80,29 @@ $A : \{a,b,c,d\}$\\
     \node at ( 90:2)    {a b c d};
 \end{tikzpicture}
 
+\subsection{Wichtige Zahlenmengen}
 
-Wichtige Zahlenmengen:\\
-$\mathbb{N} := \{0,1,2,3,4,5,6,...\}$\\
-Die Menge der natürlichen Zahlen\\
-\\
-$\mathbb{Z} := \{-3,-2,-1,0,1,2,3,...\}$\\
-Die Menge der ganzen Zahlen\\
-\\
-$\mathbb{Q} := \{m/n | m \in \mathbb{Z} \wedge n \in \mathbb{N} \wedge n \ne 0\}$\\
-Die Menge der rationalen Zahlen\\
-\\
+\def\arraystretch{1.5}
+\begin{table}[ht]
+\begin{tabular}[t]{ll}
+\hline
+  Kürzel & Definition\\
+\hline
+  $\mathbb{N}$ & $\{0,1,2,3,4,5,6,...\}$\\
+   & Die Menge der natürlichen Zahlen\\
+  $\mathbb{Z}$ & $\{-3,-2,-1,0,1,2,3,...\}$\\
+   & Die Menge der ganzen Zahlen\\
+  $\mathbb{Q}$ & $\{m/n | m \in \mathbb{Z} \wedge n \in \mathbb{N} \wedge n \ne 0\}$\\
+   & Die Menge der rationalen Zahlen\\
+  $\mathbb{R}$ & $\{x | x ist als endlicher oder unendlicher Dezimalbruch darstellbar\}$\\
+   & Die Menge der reellen Zahlen\\   
+  $\mathbb{C}$ & $\{x+yi | x,y \in \mathbb{R} \wedge i := \sqrt{-1}\}$\\
+   & Die Menge der komplexen Zahlen\\
+\hline
+\end{tabular}
+\end{table}
 
-$\mathbb{R} := \{x | x ist als endlicher oder unendlicher Dezimalbruch darstellbar\}$\\
-Die Menge der reellen Zahlen\\
-\\
-
-$\mathbb{C} := \{x+yi | x,y \in \mathbb{R} \wedge i := \sqrt{-1}\}$\\
-Die Menge der komplexen Zahlen\\
-\\
-
-Teilmengen / Obermengen
+\subsection{Teilmengen / Obermengen}
 
 $x \in A \rightarrow x \in B$\\
 $A \subseteq B$ und sagen A ist eine Teilmenge von B und B ist eine Obermenge von A\\
@@ -123,7 +125,7 @@ Beispiel:\\
 $A := \{a,b,c,d,e,....,y,z\}$ Die Menge der kleinen Buchstaben des Deutschen Alphabet ohne Umlaute.\\
 So ist $|A| = 26$\\
 
-Potenzmenge:\\
+\subsection{Potenzmenge}
 Die Menge der Teilmengen einer Menge (A) wird als Potenzmenge von A genannt und mit P(A) symbolisiert.
 Jede Teilmenge $S \subseteq P(A)$ der Potenzmenge A wird auch (Mengen-)System über A genannt.\\
 \\
@@ -132,7 +134,7 @@ Die Mächtigkeit einer endlichen Potenzmenge errechnet sich folgendermassen:\\
 $|P(A)| = 2^{|A|}$\\
 \\
 
-Mengenoperationen:\\
+\subsection{Mengenoperationen}
 Grundmenge G:\\
 Übermenge / Gesamtheit\\
 Wird oft wegelasse, ist aber trozdem da.
@@ -181,7 +183,16 @@ $A \times B = \{(1,3),(1,4),(2,3),(2,4)\}$\\
 \\
 
 Mengenoperationen können zu längeren logischen Ausdrücken verknüpft werden.\\
-\\
+
+Dabei gilt die folgende Bindungsstärke:
+
+\begin{enumerate}
+  \item $( )$ \hspace{15.5mm} Klammern
+  \item $\overline{\rm A}$ \hspace{8mm} Komplement
+  \item $\bigcap$, $\bigcup$ ($\bigcup \limits_{k=1}^n$, $\bigcap \limits_{k=1}^n$) \hspace{1mm} Vereinigung \& Durchschnitt
+  \item $\cap$, $\cup$, $\setminus$, $\triangle$, $\overline{\rm A}$, $\times$ \hspace{8mm} Vereinigung \& Durchschnitt \& Differenz \& Symmetrische Differenz \& Komplement \& Kartesisches Produkt
+\end{enumerate}
+
 
 Gesetze der Mengenalgebra:\\
 Die einzige notwendige Operatione ist das Elementenprädikat $\in$ oder $\notin$.\\
