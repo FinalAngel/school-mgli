@@ -37,16 +37,15 @@
     \\Jedoch nicht, wenn: $P(x)$ eine Primzahl ist und $Q(x)$ eine ungerade natürliche Zahl ist.
     \\
     \\\textbf{Quantoren}
-    \\
     \def\arraystretch{1.5}
     \begin{table}[ht]
-        \begin{tabular}[t]{ll}
+        \begin{tabular}[t]{lll}
             \hline
-            Kürzel & Definition\\
+            Kürzel & Definition & Beispiel\\
             \hline
-            $\forall x$ & Für alle x\\
-            $\exists x$ & Es gibt mindestens ein x\\
-            $\exists!$ & Es gibt nur ein x\\
+            $\forall x & Für alle x & Bezeichnet x ein Objekt der Gesamheit aller Katzen. Dann ist \forall x : "x hat Schnurrhaare."$\\
+            $\exists x$ & Es gibt mindestens ein $x$ & Bezeichnet $a$ die Personen in unserem Unterrichtsraum. Dann ist $\exists! a : "a ist Dozent." eine prdäikatenlogische Aussage.)$\\
+            $\exists!$ & Es gibt nur ein $x$ & Bezeichnet m alle Menschen auf unserem Planeten. $\exists m : m ist Kannibale"$ heisst, es gibt unter allen Menschen auf diesem Planeten sicher einen Kannibalen.\\
             \hline
         \end{tabular}
     \end{table}
@@ -72,13 +71,30 @@
     \end{align}
     \def\arraystretch{1.5}
     \begin{table}[ht]
-        \begin{tabular}[t]{ll}
+        \begin{tabular}[t]{lll}
             \hline
-            Distributivgestze der Prädikate\\
+            Name & Regel\\
             \hline
-            $\forall x(Px\wedge Qx)\leftrightarrow (\forall xPx\wedge \forall xQx)$\\
-            ${\displaystyle \exists x(Px\lor Qx)\leftrightarrow (\exists xPx\lor \exists xQx)}$\\
+            Verneinungssätze & $\neg(\forall x : A(x)) \iff \exists x : \neg A(x)$\\
+            & $\neg(\forall x : \neg A(x)) \iff \exists x : A(x)$\\
+            & $\neg(\exists x : A(x)) \iff \forall x : \neg A(x)$\\
+            & $\neg(\exists x : \neg A(x)) \iff \forall x : A(x)$\\
+            Vertauschbarkeitssätze & $\forall x, y : A(x, y) \iff \forall y, x : A(x, y)$\\
+            & $\exists x, y : A(x, y) \iff \exists y, x : A(x, y)$\\
+            & $\exists x \forall y : A(x, y) \color{red}\Rightarrow \color{black}\forall y \exists x : A(x, y)$\\
+            & $\forall x : A(x) \color{red}\Rightarrow \color{black}\exists x : A(x)$\\
+            & $\exists! x : A(x) \color{red}\Rightarrow \color{black}\exists x : A(x)$\\
             \hline
         \end{tabular}
     \end{table}
+    \begin{align}
+        \fbox{\begin{minipage}{11.8cm}
+                  \textbf{Beispiel Negation}: Es gilt nicht, dass es eine Farbe $z$ gibt, so dass alle Menschen $x$ ein Auto $y$ besitzen mit der Farbe $z$.
+                  \\Formel: $\neg(\exists z \forall x \exists y : A(x, y, z))$
+                  \\3. Verneinungssatz: $\iff \forall z: \neg(\forall x \exists y : A(x, y, z))$
+                  \\1. Verneinungssatz: $\iff \forall z \exists x : \neg(\exists y: A(x, y, z))$
+                  \\3. Verneinungssatz: $\iff \forall z \exists x \forall y : \neg A(x, y, z)$
+                  \\"Für jede Farbe $z$ gilt, dass es eine Person $x$ gibt, so dass alle ihre Autos nicht Farbe $z$ haben."
+        \end{minipage}}
+    \end{align}
 \end{document}
