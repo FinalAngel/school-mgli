@@ -13,13 +13,32 @@
 
 \subsection{Einführung}
 
-Mit Mengen lassen sich Objekte genau beschreiben und vergleichen.
+Mit Mengen lassen sich Objekte genau beschreiben und vergleichen. \\
+Eine Menge ist eine Zusammenfassung, von bestimmten wohlunterscheidbaren 
+Elemenenten die zu einem ganzen zusammengeführt werden.\\
 
 \begin{itemize}
     \item Mengen sind Objekte worüber wir Aussagen machen
-    \item Mengen sind wohl unterscheidbar
+    \item Mengen sind wohlunterscheidbare Elemente die zu einem ganzen zusammengeführ werden
     \item Mengen sind Objekte unseres Denkens / Anschauung
 \end{itemize}
+
+$x \in M$
+x ist ein Element von M
+
+$x \notin M$
+x ist kein Element von M
+
+$\varnothing = \{\}$
+Leere Menge
+
+Ein Objekt ist entweder Element einer Menge ($\in$) oder nicht ($\notin$).
+
+M := \{a,b,c\}
+ist die Menge M, welche aus den Elementen a b c besteht
+
+M := \{a,a,b,c\}
+is keine Menge. Dasselbe Element soll nicht mehrmals vorkommen
 
 \subsubsection{Definition von Mengen}
 
@@ -49,12 +68,17 @@ Elemente einer Menge müssen nicht vom selben Typ sein:
 $A := \{Tiger, Pi, BMW, 2+3=5\}$
 \vspace{5mm}
 
-Menge A und Menge B sind identisch (A=B), wenn sie die selben Elemente enthalten.
+Menge $A$ und Menge $B$ sind identisch $(A=B)$, wenn sie die selben Elemente enthalten.
 
 $A=B : \iff \forall x : (x \in A \iff x \in B)$
 \vspace{5mm}
 
 Wenn A nicht gleich B: $A \ne B$
+
+
+\newpage
+
+\subsection{Verschiedene Arten der Darstellung}
 
 \subsubsection{Darstellung von Mengen}
 
@@ -181,21 +205,14 @@ $A \cup B = \{a,b,c,x,z\}$\\
 
 \subsubsection{Duchschnitt}
 
+
 Duchschnitt $\cap$ (Schnittmenge, Mengen Disjunktion)\\
 Die Elemnte, welche A und B gemeinsam haben.\\
 $A := \{a,b,c,d,e,f\}$ , $B := \{e,f\}$\\
 $A \cap B := \{x \in G | x \in A \wedge x \in B\}$\\
 $A \cap B = \{e,f\}$\\
 
-\begin{tikzpicture}
-  \begin{scope}
-      \clip \firstcircle;
-      \fill[filled] \secondcircle;
-  \end{scope}
-  \draw[outline] \firstcircle node {$A$};
-  \draw[outline] \secondcircle node {$B$};
-  \node[anchor=south] at (current bounding box.north) {$A \cap B$};
-\end{tikzpicture}
+Differenz $\\$ (Mengen differenz)\\
 
 \subsubsection{Differenz}
 
@@ -290,6 +307,7 @@ Alles andere kann durch Operatoren der Prädikatenlogik eingeführt werden.\\
 Gründe für das Rechnen mit Mengen is die Möglichkeit einfache Gleichheit zu testen. Grosse und komplizierte Ausdrücke lassen sich unterteilen und vereinfachen.\\
 Aussagelogik und Mengentheorie unterscheiden sich im Kontext.\\
 
+Elementare Rechenregel:\\
 \def\arraystretch{1.5}
 \begin{table}[ht]
 \begin{tabular}[t]{ll}
@@ -331,15 +349,6 @@ Name/Stichwort: & Regel/Gesetz:\\
 \end{table}
 
 $A \triangle B$ lässt sich auch darstellen als $(A \setminus B) \cup (B \setminus A)$\\
-
-\subsubsection{Weiters zum Kartesischen Produkt}
-
-\begin{itemize}
-  \item Es kann aus unterschiedlicher Grundmenge viele nicht-triviale neue Mengen bilden.
-  \item Hat etwas andere rechnerische Eigenschaften.
-  \item Wichtig bei der Bildung von Relation und Funktion.
-  \item Erlauft den Begriff der Paarung und damit den Vergleich der Mächtigkeiten, auch von unendlichen Mengen.
-\end{itemize}
 
 \subsubsection{Partition einer Menge}
 
@@ -441,9 +450,3 @@ Unendliche Mengen verhalten sich bedeuntend unintuitiver als endliche Mengen.\\
 
 Die Kontinuumhypothesis beschäftigt sich mit der Frage; Gibt es eine Menge A zwischen $|\mathbb{N}| < |A| < \mathbb{R}$?\\
 Die Antwort ist bis heute ungeklährt und wird deshalb verneint, also es gibt keine Menge, deren Mäctigkeit dazwischen liegt.
-
-\subsection{Gesetze der Mengenalgebra}
-
-Ein Objekt ist entweder Element einer Menge oder nicht
-
-M := \{a,b,c\} $a \in M$, $d \notin M$
