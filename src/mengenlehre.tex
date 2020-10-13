@@ -1,13 +1,20 @@
 \documentclass[../gruppenarbeit_1.tex]{subfiles}
+\usetikzlibrary{shapes,backgrounds}
 
 \begin{document}
 
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(60:2cm) circle (1.5cm)}
+\def\thirdcircle{(0:2cm) circle (1.5cm)}
+
+
 \subsection{Einführung}
-Mit Mengen lassen sich Objekte genau beschreiben und vergleichen.
+Mit Mengen lassen sich Objekte genau beschreiben und vergleichen. \\
+Eine Menge ist eine Zusammenfassung, von bestimmten wohlunterscheidbaren Elemenenten die zu einem ganzen zusammengeführt werden.\\
 
 \begin{itemize}
     \item Mengen sind Objekte worüber wir Aussagen machen
-    \item Mengen sind wohl unterscheidbar
+    \item Mengen sind wohlunterscheidbare Elemente die zu einem ganzen zusammengeführ werden
     \item Mengen sind Objekte unseres Denkens / Anschauung
 \end{itemize}
 
@@ -20,6 +27,7 @@ x ist kein Element von M
 $\varnothing = \{\}$
 Leere Menge
 
+Ein Objekt ist entweder Element einer Menge ($\in$) oder nicht ($\notin$).
 
 M := \{a,b,c\}
 ist die Menge M, welche aus den Elementen a b c besteht
@@ -43,13 +51,15 @@ Elemente einer Menge müssen nicht vom selben Typ sein:
 
 $A := \{Tiger, Pi, BMW, 2+3=5\}$
 
-Menge A und Menge B sind identisch (A=B), wenn sie die selben Elemente enthalten.
+Menge $A$ und Menge $B$ sind identisch $(A=B)$, wenn sie die selben Elemente enthalten.
 
 $A=B : \iff \forall x : (x \in A \iff x \in B)$
 
 Wenn A nicht gleich B: $A \ne B$
 
-Verschiedene Arten der Darstellung
+\newpage
+
+\subsection{Verschiedene Arten der Darstellung}
 
 \begin{align}
     \fbox{\begin{minipage}{11.8cm}
@@ -80,6 +90,7 @@ $A : \{a,b,c,d\}$\\
     \node at ( 90:2)    {a b c d};
 \end{tikzpicture}
 
+<<<<<<< Updated upstream
 \subsection{Wichtige Zahlenmengen}
 
 \def\arraystretch{1.5}
@@ -101,6 +112,29 @@ $A : \{a,b,c,d\}$\\
 \hline
 \end{tabular}
 \end{table}
+=======
+\newpage
+
+\subsection{Wichtige Zahlenmengen}
+
+$\mathbb{N} := \{0,1,2,3,4,5,6,...\}$\\
+Die Menge der natürlichen Zahlen\\
+\\
+$\mathbb{Z} := \{-3,-2,-1,0,1,2,3,...\}$\\
+Die Menge der ganzen Zahlen\\
+\\
+$\mathbb{Q} := \{m/n | m \in \mathbb{Z} \wedge n \in \mathbb{N} \wedge n \ne 0\}$\\
+Die Menge der rationalen Zahlen\\
+\\
+
+$\mathbb{R} := \{x | x ist als endlicher oder unendlicher Dezimalbruch darstellbar\}$\\
+Die Menge der reellen Zahlen\\
+\\
+
+$\mathbb{C} := \{x+yi | x,y \in \mathbb{R} \wedge i := \sqrt{-1}\}$\\
+Die Menge der komplexen Zahlen\\
+\\
+>>>>>>> Stashed changes
 
 \subsection{Teilmengen / Obermengen}
 
@@ -125,7 +159,13 @@ Beispiel:\\
 $A := \{a,b,c,d,e,....,y,z\}$ Die Menge der kleinen Buchstaben des Deutschen Alphabet ohne Umlaute.\\
 So ist $|A| = 26$\\
 
+<<<<<<< Updated upstream
 \subsection{Potenzmenge}
+=======
+\newpage
+
+Potenzmenge:\\
+>>>>>>> Stashed changes
 Die Menge der Teilmengen einer Menge (A) wird als Potenzmenge von A genannt und mit P(A) symbolisiert.
 Jede Teilmenge $S \subseteq P(A)$ der Potenzmenge A wird auch (Mengen-)System über A genannt.\\
 \\
@@ -135,6 +175,10 @@ $|P(A)| = 2^{|A|}$\\
 \\
 
 \subsection{Mengenoperationen}
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 Grundmenge G:\\
 Übermenge / Gesamtheit\\
 Wird oft wegelasse, ist aber trozdem da.
@@ -146,12 +190,34 @@ $A := \{a,b,c\}$ , $B := \{x,y\}$\\
 $A \cup B := \{x \in G | x \in A \vee x \in B\}$\\
 $A \cup B = \{a,b,c,x,z\}$\\
 \\
+\begin{tikzpicture}
+    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=1]
+        \fill[red] \firstcircle;
+        \fill[red] \thirdcircle;
+        \draw \firstcircle node[below] {$A$};
+        \draw \thirdcircle node [below] {$B$};
+    \end{scope}
+\end{tikzpicture}
+
+\newpage
 
 Duchschnitt $\cap$ (Schnittmenge, Mengen Disjunktion)\\
 Die Elemnte, welche A und B gemeinsam haben.\\
 $A := \{a,b,c,d,e,f\}$ , $B := \{e,f\}$\\
 $A \cap B := \{x \in G | x \in A \wedge x \in B\}$\\
 $A \cap B = \{e,f\}$\\
+\\
+
+\begin{tikzpicture}
+    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
+        % \fill[red] \firstcircle;
+        % \fill[blue] \thirdcircle;
+        \draw \firstcircle node[below] {$A$};
+        \draw \thirdcircle node [below] {$B$};
+        \clip \firstcircle;
+        \fill [red] \thirdcircle;
+    \end{scope}
+\end{tikzpicture}
 \\
 
 Differenz $\\$ (Mengen differenz)\\
@@ -161,6 +227,19 @@ $A \setminus B := \{x \in G | (x \in A \wedge x \notin B)\}$\\
 $A \setminus B = \{a,b,c,d\}$\\
 \\
 
+\begin{tikzpicture}
+    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5, even odd rule]
+        % \fill[red] \firstcircle;
+        % \fill[blue] \thirdcircle;
+        \draw \firstcircle node[below] {$A$};
+        \draw \thirdcircle node [below] {$B$};
+        \clip \thirdcircle (-4,-4) rectangle (4,4);
+        \fill [red] \firstcircle;
+    \end{scope}
+\end{tikzpicture}
+
+\newpage
+
 Symmetrische Differenz $\triangle$\\
 Alle Elemente in A, welche nicht in B vorkommen, und alle Elemente in B, welche nicht in A vorkommen.\\
 $A := \{a,b,c,d,e,f\}$ , $B := \{e,f,g,h\}$\\
@@ -168,11 +247,37 @@ $A \triangle B := \{x \in G | (x \in A \wedge x \notin B) \vee (x \in B \wedge x
 $A \triangle B = \{a,b,c,d,g,h\}$\\
 \\
 
+\begin{tikzpicture}
+    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
+        \fill[red] \firstcircle;
+        \fill[red] \thirdcircle;
+        \draw \firstcircle node[below] {$A$};
+        \draw \thirdcircle node [below] {$B$};
+        \clip \firstcircle;
+        \fill [white] \thirdcircle;
+        \fill [white] \thirdcircle;
+        \fill [white] \thirdcircle;
+    \end{scope}
+\end{tikzpicture}
+\\
+
 Komplement $\overline{\rm A}$\\
 Alles ausser A\\
 $A := \{1,2,3,4,5\}$ , $G := \mathbb{N}$\\
 $\overline{\rm A} := \{x \in G | (x \notin A\} = G \setminus A$\\
 $\overline{\rm A} = \{6,7,8,9,10,...\}$\\
+\\
+
+\begin{tikzpicture}
+    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
+        \filldraw[fill=red] (-3,-3) rectangle (3,2);
+        \fill[white] \firstcircle;
+        \fill[white] \firstcircle;
+        % \fill[blue] \thirdcircle;
+        
+        \draw \firstcircle node[below] {$A$};
+    \end{scope}
+\end{tikzpicture}
 \\
 
 Kartesisches Produkt $\times$ (Mengenprodukt)\\
@@ -194,13 +299,15 @@ Dabei gilt die folgende Bindungsstärke:
 \end{enumerate}
 
 
-Gesetze der Mengenalgebra:\\
+\subsection{Gesetze der Mengenalgebra}
+
 Die einzige notwendige Operatione ist das Elementenprädikat $\in$ oder $\notin$.\\
 Alles andere kann durch Operatoren der Prädikatenlogik eingeführt werden.\\
 Gründe für das Rechnen mit Mengen is die Möglichkeit einfache Gleichheit zu testen. Grosse und komplizierte Ausdrücke lassen sich unterteilen und vereinfachen.\\
 Aussagelogik und Mengentheorie unterscheiden sich im Kontext.\\
 \\
 
+Elementare Rechenregel:\\
 \def\arraystretch{1.5}
 \begin{table}[ht]
 \begin{tabular}[t]{ll}
@@ -249,7 +356,8 @@ Hat etwas andere rechnerische Eigenschaften.\\
 Wichtig bei der Bildung von Relation und Funktion.\\
 Erlauft den Begriff der Paarung und damit den Vergleich der Mächtigkeiten, auch von unendlichen Mengen.\\
 
-Partition einer Menge:\\
+\subsection{Partition einer Menge}
+
 Eine Menge A kann viele und verschiedene Teilmengen haben.\\
 Diese kann man wieder zu Mengen zusammenfassen.\\
 Ein ganz besonders hilfreicher Typ von Mengensystem\\
@@ -274,7 +382,7 @@ Die Anzahl Partitionen einer Menge M mit n Elementen lässt sich durch die sogen
     \quad
 \end{table}
 
-Die Unendlichkeit von Mengen\\
+\subsection{Die Unendlichkeit von Mengen}
 
 Die Fragestellung die es zu klähren gillt:\\
 Lassen sich kardinalitäten von unendlichen Mengen vergleichen? Ja!\\
@@ -316,58 +424,6 @@ Unendliche Mengen verhalten sich bedeuntend unintuitiver als endliche Mengen.\\
 
 Die Kontinuumhypothesis beschäftigt sich mit der Frage; Gibt es eine Menge A zwischen $|\mathbb{N}| < |A| < \mathbb{R}$?\\
 Die Antwort ist bis heute ungeklährt und wird deshalb verneint, also es gibt keine Menge, deren Mäctigkeit dazwischen liegt.
-
-\subsection{Gesetze der Mengenalgebra}
-
-Ein Objekt ist entweder Element einer Menge oder nicht
-
-M := \{a,b,c\} $a \in M$, $d \notin M$
-
-
-\subsubsection{Äquivalent und Implikation}
-
-$\alpha$
-
-This is some $\frac{2}{4}$
-
-* Speziell hervorheben
-
-\subsection{Semantik und Syntax}
-
-* Kurze Einführung
-
-\subsubsection{Semantik}
-
-* Definition Semantik
-
-\subsubsection{Syntax}
-
-* Definition Syntax
-
-\subsection{Rechenregeln}
-
-* 8 Regeln mit Beispielen
-
-\subsection{Normalformen}
-
-* Kurze Einführung
-
-\subsubsection{Konjunktive Normalform (KNF)}
-
-* Definition und Beispiele
-
-\subsubsection{Disjunktive Normalform (DNF)}
-
-* Definition und Beispiele
-
-\subsection{Belegung und Modelle}
-
-* Was ist die Belegung
-* Was sind Modelle
-
-\subsection{Erfüllbarkeitseigenschaften}
-
-* Was sind diese und Beispiele
 
 
 \end{document}
