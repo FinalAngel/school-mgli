@@ -203,16 +203,6 @@ $A \cup B := \{x \in G | x \in A \vee x \in B\}$\\
 $A \cup B = \{a,b,c,x,z\}$\\
 
 \\
-\begin{tikzpicture}
-    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=1]
-        \fill[red] \firstcircle;
-        \fill[red] \thirdcircle;
-        \draw \firstcircle node[below] {$A$};
-        \draw \thirdcircle node [below] {$B$};
-    \end{scope}
-\end{tikzpicture}
-
-\newpage
 
 \begin{tikzpicture}
   \draw[filled] \firstcircle node {$A$}
@@ -229,16 +219,6 @@ $A := \{a,b,c,d,e,f\}$ , $B := \{e,f\}$\\
 $A \cap B := \{x \in G | x \in A \wedge x \in B\}$\\
 $A \cap B = \{e,f\}$\\
 
-\begin{tikzpicture}
-    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
-        % \fill[red] \firstcircle;
-        % \fill[blue] \thirdcircle;
-        \draw \firstcircle node[below] {$A$};
-        \draw \thirdcircle node [below] {$B$};
-        \clip \firstcircle;
-        \fill [red] \thirdcircle;
-    \end{scope}
-\end{tikzpicture}
 \\
 
 Differenz $\\$ (Mengen differenz)\\
@@ -272,19 +252,6 @@ $A \setminus B = \{a,b,c,d\}$\\
 
 \subsubsection{Symmetrische Differenz}
 
-\begin{tikzpicture}
-    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5, even odd rule]
-        % \fill[red] \firstcircle;
-        % \fill[blue] \thirdcircle;
-        \draw \firstcircle node[below] {$A$};
-        \draw \thirdcircle node [below] {$B$};
-        \clip \thirdcircle (-4,-4) rectangle (4,4);
-        \fill [red] \firstcircle;
-    \end{scope}
-\end{tikzpicture}
-
-\newpage
-
 Symmetrische Differenz $\triangle$\\
 Alle Elemente in A, welche nicht in B vorkommen, und alle Elemente in B, welche nicht in A vorkommen.\\
 $A := \{a,b,c,d,e,f\}$ , $B := \{e,f,g,h\}$\\
@@ -299,20 +266,6 @@ $A \triangle B = \{a,b,c,d,g,h\}$\\
 
 \subsubsection{Komplement}
 
-\begin{tikzpicture}
-    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
-        \fill[red] \firstcircle;
-        \fill[red] \thirdcircle;
-        \draw \firstcircle node[below] {$A$};
-        \draw \thirdcircle node [below] {$B$};
-        \clip \firstcircle;
-        \fill [white] \thirdcircle;
-        \fill [white] \thirdcircle;
-        \fill [white] \thirdcircle;
-    \end{scope}
-\end{tikzpicture}
-\\
-
 Komplement $\overline{\rm A}$\\
 Alles ausser A\\
 $A := \{1,2,3,4,5\}$ , $G := \mathbb{N}$\\
@@ -326,18 +279,6 @@ $\overline{\rm A} = \{6,7,8,9,10,...\}$\\
 \end{tikzpicture}
 
 \subsubsection{Kartesisches Produkt}
-
-\begin{tikzpicture}
-    \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
-        \filldraw[fill=red] (-3,-3) rectangle (3,2);
-        \fill[white] \firstcircle;
-        \fill[white] \firstcircle;
-        % \fill[blue] \thirdcircle;
-        
-        \draw \firstcircle node[below] {$A$};
-    \end{scope}
-\end{tikzpicture}
-\\
 
 Kartesisches Produkt $\times$ (Mengenprodukt)\\
 Alle Elemente von A "Multipliziert" mit allen Elementen der Menge B.\\
