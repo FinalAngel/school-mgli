@@ -1,3 +1,167 @@
 \documentclass[../gruppenarbeit_1.tex]{subfiles}
 
-Content hier einfügen...
+\subsection{Was sind Prädikate?}
+
+Eine Aussage bestand bisher immer daraus, etwas über die Eigenschaft 
+eines Objekts zu sagen. Solche Aussagen werden in der Mathematik «Prädikate» 
+genannt.
+\vspace{1mm}
+
+Die Zuordnung eines Prädikats wird wie folgt dargestellt: $P(x)$. 
+$P$ ist das Prädikat, wobei $x$ das Objekt ist.
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+    \textbf{Beispiel}: Aussage über ein mathematisches Objekt: $A:=5$ ist 
+    eine ungerade Zahl.
+\end{minipage}}
+\end{align}
+    
+\subsection{Definintion von verschiedenen Prädikaten}
+
+Enthält ein Prädikat mehrere Objektvariablen, so nennen wir unser Prädikat 
+«n-stelliges Prädikat» oder eine «n-stellige Aussageform». Wenn jedoch eine 
+Aussage keine Variable enthält, reden wir von einem «0-stelligen Prädikat».
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+    \textbf{Beispiel}: n-stelliges Prädikat:\\
+    $Q(x,\ y) :=$ «x ist Automarke und y ist das Modell».\\
+    Das Prädikat $Q(VW,\ Golf)$ ist wahr, wobei $Q(Toyota,\ Polo)$ falsch ist.
+\end{minipage}}
+\end{align}
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+    \textbf{Beispiel}: $V(3):=$ «3 ist eine ungerade Zahl» ist eine Aussage 
+    und somit ein 0-stelliges Prädikat.
+\end{minipage}}
+\end{align}
+
+\subsection{Äquivalenz von zwei Prädikaten}
+
+Wenn alle Objektvariablenbelegungen dieselben Wahrheitswerte haben,\\
+dann wird das folgendermassen dargestellt: $P(x) \iff Q(x)$ oder 
+$P(x) \Rightarrow Q(x) und Q(x) \Rightarrow P(x)$
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+    \textbf{Beispiel}: $P(x):=$ «$x$ ist durch 20 teilbar» und\\
+    $Q(x):=$ «$x$ ist durch 4 und 5 teilbar». Dann ist $P(x) \iff Q(x)$.
+\end{minipage}}
+\end{align}
+
+Jedoch nicht, wenn: $P(x)$ eine Primzahl ist und $Q(x)$ eine ungerade 
+natürliche Zahl ist.
+
+\newpage
+
+\subsection{Quantoren}
+
+\def\arraystretch{1.5}
+\begin{table}[ht]
+\begin{tabular}[t]{lll}
+    \hline
+    Kürzel & Definition\\
+    \hline
+    $\forall x$ & Für alle $x$\\
+    $\exists x$ & Es gibt mindestens ein $x$\\
+    $\exists!$ & Es gibt nur ein $x$\\
+    \hline
+\end{tabular}
+\end{table}
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+    \textbf{Beispiele}:\\
+    $\forall x$\\
+    Bezeichnet x ein Objekt der Gesamheit aller Katzen. Dann ist 
+    $\forall x$ : "$x$ hat Schnurrhaare.".\\
+    \\
+    $\exists x$\\
+    Bezeichnet $a$ die Personen in unserem Unterrichtsraum. 
+    Dann ist $\exists! a$ : "$a$ ist Dozent." eine prädikatenlogische 
+    Aussage.)\\
+    \\
+    $\exists!$\\
+    Bezeichnet $m$ alle Menschen auf unserem Planeten. 
+    $\exists m : m ist Kannibale"$ heisst, es gibt unter allen Menschen auf 
+    diesem Planeten sicher einen Kannibalen.\\
+\end{minipage}}
+\end{align}
+
+\subsubsection{Allquantor}
+
+Wenn $P$ irgendein Prädikat ist und $x$ eine Objektvariable einer bestimmten 
+Objektklasse, dann gilt: «für alle $x$ gilt $P(x)$» die wird folgendermassen 
+geschrieben: $\forall x:P(x)$
+\vspace{5mm}
+
+Das Symbol $\forall$ wird auch Allquantor oder Generalisator oder 
+Generalisator-Operator genannt.
+\vspace{5mm}
+
+\subsubsection{Existenzquantor}
+
+Wenn es mindestens ein $x$ gibt, also: «es gibt (mind.) ein $x$, so 
+dass $P(x)$ gilt», dann schreibt man: $\exists x:P(x)$
+\vspace{5mm}
+
+Das Symbol $\exists$ wird Existenzquantor oder Partikularisator genannt.
+\vspace{5mm}
+
+\subsubsection{Eindeutigkeitsquantor}
+
+Wenn es jedoch genau nur ein Objekt gibt, dann: «es gibt genau ein $x$, 
+so dass $P(x)$ gilt». Dies wird wie folgt dargestellt: $\exists! x:P(x)$.
+\vspace{5mm}
+
+Das Symbol $\exists!$ wird Eindeutigkeitsquantor oder Einzigkeitsquantor 
+genannt.
+\vspace{5mm}
+
+\textbf{Ausserdem:} Ein Quantor bindet stärker als alle anderen logischen 
+Operatoren!!!
+
+\subsection{Rechenregeln}
+
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+    \textbf{Beispiel für die Verneinung}:
+    $\neg \forall xPx\leftrightarrow \exists x\neg Px$: 
+    Die Aussage: Alle Wände sind weiss läst sich auch als "Nicht alle Wände 
+    sind weiss", und als "Es gibt mindestens eine Wand, die nicht weiss ist".
+\end{minipage}}
+\end{align}
+
+\def\arraystretch{1.5}
+\begin{table}[ht]
+\begin{tabular}[t]{lll}
+    \hline
+    Name & Regel\\
+    \hline
+    Verneinungssätze & $\neg(\forall x : A(x)) \iff \exists x : \neg A(x)$\\
+    & $\neg(\forall x : \neg A(x)) \iff \exists x : A(x)$\\
+    & $\neg(\exists x : A(x)) \iff \forall x : \neg A(x)$\\
+    & $\neg(\exists x : \neg A(x)) \iff \forall x : A(x)$\\
+    Vertauschbarkeitssätze & $\forall x, y : A(x, y) \iff \forall y, x : A(x, y)$\\
+    & $\exists x, y : A(x, y) \iff \exists y, x : A(x, y)$\\
+    & $\exists x \forall y : A(x, y) \color{red}\Rightarrow \color{black}\forall y \exists x : A(x, y)$\\
+    & $\forall x : A(x) \color{red}\Rightarrow \color{black}\exists x : A(x)$\\
+    & $\exists! x : A(x) \color{red}\Rightarrow \color{black}\exists x : A(x)$\\
+    \hline
+\end{tabular}
+\end{table}
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+    \textbf{Beispiel Negation}:\\
+    Es gilt nicht, dass es eine Farbe $z$ gibt, so dass alle Menschen $x$ 
+    ein Auto $y$ besitzen mit der Farbe $z$.\\
+    \\Formel: $\neg(\exists z \forall x \exists y : A(x, y, z))$
+    \\3. Verneinungssatz: $\iff \forall z: \neg(\forall x \exists y : A(x, y, z))$
+    \\1. Verneinungssatz: $\iff \forall z \exists x : \neg(\exists y: A(x, y, z))$
+    \\3. Verneinungssatz: $\iff \forall z \exists x \forall y : \neg A(x, y, z)$
+    \\
+    \\"Für jede Farbe $z$ gilt, dass es eine Person $x$ gibt, so dass alle ihre Autos nicht Farbe $z$ haben."
+\end{minipage}}
+\end{align}

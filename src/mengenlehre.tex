@@ -1,7 +1,16 @@
 \documentclass[../gruppenarbeit_1.tex]{subfiles}
 \usetikzlibrary{shapes,backgrounds}
 
-\begin{document}
+% definition für mengendiagramme
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{blue!50}
+\colorlet{circle area}{blue!20}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+% definition für mengendiagramme
 
 \def\firstcircle{(0,0) circle (1.5cm)}
 \def\secondcircle{(60:2cm) circle (1.5cm)}
@@ -11,6 +20,7 @@
 \subsection{Einführung}
 Mit Mengen lassen sich Objekte genau beschreiben und vergleichen. \\
 Eine Menge ist eine Zusammenfassung, von bestimmten wohlunterscheidbaren Elemenenten die zu einem ganzen zusammengeführt werden.\\
+
 
 \begin{itemize}
     \item Mengen sind Objekte worüber wir Aussagen machen
@@ -35,59 +45,75 @@ ist die Menge M, welche aus den Elementen a b c besteht
 M := \{a,a,b,c\}
 is keine Menge. Dasselbe Element soll nicht mehrmals vorkommen
 
+\subsubsection{Definition von Mengen}
+
 \def\arraystretch{1.5}
 \begin{table}[ht]
-\begin{tabular}[t]{ll}
-\hline
-  Kürzel & Definition\\
-\hline
-  $A, B$ & Mengen\\
-  $a, b$ & Elemente einer Menge\\
-\hline
+\begin{tabular}[t]{lll}
+    \hline
+    Kürzel & Definition\\
+    \hline
+    $A, B$ & Mengen\\
+    $a, b$ & Elemente einer Menge\\
+    $x \in M$ & x ist ein Element von M\\
+    $x \notin M$ & x ist kein Element von M\\
+    $\varnothing = \{\}$ & Leere Menge $x$\\
+    \hline
 \end{tabular}
 \end{table}
+
+\begin{itemize}
+  \item $M := \{a,b,c\}$: ist die Menge M, welche aus den Elementen a b c besteht
+  \item $M := \{a,a,b,c\}$: is keine Menge. Dasselbe Element soll nicht 
+  mehrmals vorkommen
+\end{itemize}
 
 Elemente einer Menge müssen nicht vom selben Typ sein:
 
 $A := \{Tiger, Pi, BMW, 2+3=5\}$
+\vspace{5mm}
 
 Menge $A$ und Menge $B$ sind identisch $(A=B)$, wenn sie die selben Elemente enthalten.
 
 $A=B : \iff \forall x : (x \in A \iff x \in B)$
+\vspace{5mm}
 
 Wenn A nicht gleich B: $A \ne B$
+
 
 \newpage
 
 \subsection{Verschiedene Arten der Darstellung}
 
+\subsubsection{Darstellung von Mengen}
+
+\textbf{Aufzählende Form}:\\
+$A := \{0,1,2,3\}$
+\vspace{5mm}
+
+\textbf{Beschreibende Form}:\\
+Die Menge A aller x mit der Eigenschaft $P(x)$.\\
+\vspace{5mm}
+
+\textbf{Mathematisch Formal}:\\
+$A := \{x | P(x)\}$
+
 \begin{align}
-    \fbox{\begin{minipage}{11.8cm}
-      \textbf{Form}:\\
-      \\
-      Aufzählende Form:\\
-      $A := \{0,1,2,3\}$\\
-      Beschreibende Form:\\
-      Die Menge A aller x mit der Eigenschaft $P(x)$.\\
-      Mathematisch Formal:\\
-      $A := \{x | P(x)\}$
-    \end{minipage}}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: Die Menge A aller natürlichen, ungeraden Zahlen 
+  kleiner 10.\\
+  $A := \{n | n \in \mathbb{N} \wedge n < 10 (\exists k \in \mathbb{N} : n = 2k-1)\}$
+\end{minipage}}
 \end{align}
 
-Beispiel:\\
-Die Menge A aller natürlichen, ungeraden Zahlen kleiner 10.\\
-\\
-$A := \{n | n \in \mathbb{N} \wedge n < 10 (\exists k \in \mathbb{N} : n = 2k-1)\}$\\
-\\
-
-Venn Diagramm zur Grafischen Darstellung:\\
+\textbf{Venn-Diagramm zur Grafischen Darstellung}:\\
 $A : \{a,b,c,d\}$\\
 
 \begin{tikzpicture}
-    \begin{scope}[blend group=soft light]
-        \fill[red!30!white]   ( 90:1.2) circle (2);
-    \end{scope}
-    \node at ( 90:2)    {a b c d};
+  \begin{scope}[blend group=soft light]
+      \fill[red!30!white]   ( 90:1.2) circle (2);
+  \end{scope}
+  \node at ( 90:2)    {a b c d};
 \end{tikzpicture}
 
 \subsection{Wichtige Zahlenmengen}
@@ -115,46 +141,67 @@ $A : \{a,b,c,d\}$\\
 \subsection{Teilmengen / Obermengen}
 
 $x \in A \rightarrow x \in B$\\
-$A \subseteq B$ und sagen A ist eine Teilmenge von B und B ist eine Obermenge von A\\
+$A \subseteq B$ und sagen A ist eine Teilmenge von B und B ist eine Obermenge 
+von A.
 
-Wenn $A \ne B, A \subset B$ oder $A \subsetneq B$ also eine echte Teilmenge oder echte Obermenge\\
+Wenn $A \ne B, A \subset B$ oder $A \subsetneq B$ also eine echte Teilmenge 
+oder echte Obermenge.\\
 
 Richtig:\\
 $\{1,2,3\} \subset \{1,2,3,4,5\}$\\
 $\{x,y,z\} \subseteq \{x,y,z\}$\\
 \\
-Falsch: \\
+Falsch:\\
 $\{x,y,z\} \subset \{x,y,z\}$
+\vspace{5mm}
 
 Eine Teilmenge ist gleichbedeutend mit Untermenge.\\
 \\
-
 Mächtigkeit (Kardinalität) ist die Anzahl der Elemente einer Menge und wird so dargestellt: $|A|$\\
 
-Beispiel:\\
-$A := \{a,b,c,d,e,....,y,z\}$ Die Menge der kleinen Buchstaben des Deutschen Alphabet ohne Umlaute.\\
-So ist $|A| = 26$\\
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: $A := \{a,b,c,d,e,....,y,z\}$\\
+  Die Menge der kleinen Buchstaben des Deutschen Alphabet ohne Umlaute.\\
+  So ist $|A| = 26$\\
+\end{minipage}}
+\end{align}
 
 \subsection{Potenzmenge}
-Die Menge der Teilmengen einer Menge (A) wird als Potenzmenge von A genannt und mit P(A) symbolisiert.
+
+Die Menge der Teilmengen einer Menge (A) wird als Potenzmenge von A genannt 
+und mit P(A) symbolisiert.
 Jede Teilmenge $S \subseteq P(A)$ der Potenzmenge A wird auch (Mengen-)System über A genannt.\\
-\\
+
+\subsection{Mächtigkeit}
+
 Sei $A := \{1,2,3\}$ Dann ist P(A) = $\{\emptyset, \{1\},\{2\},\{3\},\{1,2\}....\}$\\
 Die Mächtigkeit einer endlichen Potenzmenge errechnet sich folgendermassen:\\
 $|P(A)| = 2^{|A|}$\\
 \\
 
 \subsection{Mengenoperationen}
+
+\subsubsection{Grundmenge}
+
 Grundmenge G:\\
 Übermenge / Gesamtheit\\
 Wird oft wegelasse, ist aber trozdem da.
-\\
+
+\begin{tikzpicture}
+	\draw[filled] (-2,-2) rectangle (3,2) node at (-1.5,1.5) {}
+	(0,0) circle (1) node {$A$};
+	\node[anchor=south] at (current bounding box.north) {$G$};
+\end{tikzpicture}
+
+\subsubsection{Vereinigung}
 
 Vereinigung $\cup$ (Mengenkonjunktion)\\
 Der komplette Inhalt der einen Menge, zusammen mit dem Inhalt der anderen Menge.\\
 $A := \{a,b,c\}$ , $B := \{x,y\}$\\
 $A \cup B := \{x \in G | x \in A \vee x \in B\}$\\
 $A \cup B = \{a,b,c,x,z\}$\\
+
 \\
 \begin{tikzpicture}
     \begin{scope}[shift={(3cm,-5cm)}, fill opacity=1]
@@ -167,12 +214,20 @@ $A \cup B = \{a,b,c,x,z\}$\\
 
 \newpage
 
+\begin{tikzpicture}
+  \draw[filled] \firstcircle node {$A$}
+                \secondcircle node {$B$};
+  \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+\end{tikzpicture}
+
+\subsubsection{Duchschnitt}
+
+
 Duchschnitt $\cap$ (Schnittmenge, Mengen Disjunktion)\\
 Die Elemnte, welche A und B gemeinsam haben.\\
 $A := \{a,b,c,d,e,f\}$ , $B := \{e,f\}$\\
 $A \cap B := \{x \in G | x \in A \wedge x \in B\}$\\
 $A \cap B = \{e,f\}$\\
-\\
 
 \begin{tikzpicture}
     \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
@@ -187,11 +242,35 @@ $A \cap B = \{e,f\}$\\
 \\
 
 Differenz $\\$ (Mengen differenz)\\
+  \begin{scope}
+      \clip \firstcircle;
+      \fill[filled] \secondcircle;
+  \end{scope}
+  \draw[outline] \firstcircle node {$A$};
+  \draw[outline] \secondcircle node {$B$};
+  \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+\end{tikzpicture}
+
+\subsubsection{Differenz}
+
+Differenz $\not$ \hspace{2mm}(Mengen differenz)\\
 Alle Elemente in A, welche nicht in B vorkommen.\\
 $A := \{a,b,c,d,e,f\}$ , $B := \{e,f,g,h\}$\\
 $A \setminus B := \{x \in G | (x \in A \wedge x \notin B)\}$\\
 $A \setminus B = \{a,b,c,d\}$\\
-\\
+
+\begin{tikzpicture}
+  \begin{scope}
+      \clip \firstcircle;
+      \draw[filled, even odd rule] \firstcircle node {$A$}
+                                   \secondcircle;
+  \end{scope}
+  \draw[outline] \firstcircle
+                 \secondcircle node {$B$};
+  \node[anchor=south] at (current bounding box.north) {$A \not$ \hspace{1mm} $B$};
+\end{tikzpicture}
+
+\subsubsection{Symmetrische Differenz}
 
 \begin{tikzpicture}
     \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5, even odd rule]
@@ -211,7 +290,14 @@ Alle Elemente in A, welche nicht in B vorkommen, und alle Elemente in B, welche 
 $A := \{a,b,c,d,e,f\}$ , $B := \{e,f,g,h\}$\\
 $A \triangle B := \{x \in G | (x \in A \wedge x \notin B) \vee (x \in B \wedge x \notin A)\}$\\
 $A \triangle B = \{a,b,c,d,g,h\}$\\
-\\
+
+\begin{tikzpicture}
+  \draw[filled, even odd rule] \firstcircle node {$A$}
+                               \secondcircle node{$B$};
+  \node[anchor=south] at (current bounding box.north) {$A \triangle B$};
+\end{tikzpicture}
+
+\subsubsection{Komplement}
 
 \begin{tikzpicture}
     \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
@@ -232,7 +318,14 @@ Alles ausser A\\
 $A := \{1,2,3,4,5\}$ , $G := \mathbb{N}$\\
 $\overline{\rm A} := \{x \in G | (x \notin A\} = G \setminus A$\\
 $\overline{\rm A} = \{6,7,8,9,10,...\}$\\
-\\
+
+\begin{tikzpicture}
+  \draw[filled, even odd rule] \firstcircle node {$A$}
+                               \secondcircle node{$B$};
+  \node[anchor=south] at (current bounding box.north) {$\overline{A \cap B}$};
+\end{tikzpicture}
+
+\subsubsection{Kartesisches Produkt}
 
 \begin{tikzpicture}
     \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
@@ -251,7 +344,26 @@ Alle Elemente von A "Multipliziert" mit allen Elementen der Menge B.\\
 $A := \{1,2\}$ , $B := \{3,4\}$\\
 $A \times B := \{(x,y) | x \in A \wedge y \in B\}$\\
 $A \times B = \{(1,3),(1,4),(2,3),(2,4)\}$\\
-\\
+
+\begin{tikzpicture}[
+	vec/.style={thick,(-)},
+ ]
+	% picture commands
+	\coordinate (A) at (3,0);
+	\coordinate (B) at (0,-2);
+	\coordinate (cross prod) at (1,3);
+	\def\tick{0.1}
+	\draw [->] (-1,0) -- (6,0) node [below] {$G_1$};
+	\draw [->] (0,-1) -- (0,4) node [left]  {$G_2$};
+
+	\draw [vec] (1,-0.2) -- ++(A) node [midway,below] {$A$};
+	\draw [vec] (-0.2,3) -- ++(B) node [midway,left]  {$B$};
+
+	\fill [filled] (cross prod) rectangle ++($(A)+(B)$);
+
+	\draw node at (2.4,2) {$A \times B$};
+
+ \end{tikzpicture}
 
 Mengenoperationen können zu längeren logischen Ausdrücken verknüpft werden.\\
 
@@ -264,14 +376,12 @@ Dabei gilt die folgende Bindungsstärke:
   \item $\cap$, $\cup$, $\setminus$, $\triangle$, $\overline{\rm A}$, $\times$ \hspace{8mm} Vereinigung \& Durchschnitt \& Differenz \& Symmetrische Differenz \& Komplement \& Kartesisches Produkt
 \end{enumerate}
 
-
 \subsection{Gesetze der Mengenalgebra}
 
 Die einzige notwendige Operatione ist das Elementenprädikat $\in$ oder $\notin$.\\
 Alles andere kann durch Operatoren der Prädikatenlogik eingeführt werden.\\
 Gründe für das Rechnen mit Mengen is die Möglichkeit einfache Gleichheit zu testen. Grosse und komplizierte Ausdrücke lassen sich unterteilen und vereinfachen.\\
 Aussagelogik und Mengentheorie unterscheiden sich im Kontext.\\
-\\
 
 Elementare Rechenregel:\\
 \def\arraystretch{1.5}
@@ -316,80 +426,105 @@ Name/Stichwort: & Regel/Gesetz:\\
 
 $A \triangle B$ lässt sich auch darstellen als $(A \setminus B) \cup (B \setminus A)$\\
 
-Weiters zum Kartesischen Produkt:\\
-Es kann aus unterschiedlicher Grundmenge viele nicht-triviale neue Mengen bilden.\\
-Hat etwas andere rechnerische Eigenschaften.\\
-Wichtig bei der Bildung von Relation und Funktion.\\
-Erlauft den Begriff der Paarung und damit den Vergleich der Mächtigkeiten, auch von unendlichen Mengen.\\
+\subsubsection{Partition einer Menge}
 
-\subsection{Partition einer Menge}
+\begin{itemize}
+  \item Eine Menge A kann viele und verschiedene Teilmengen haben.
+  \item Diese kann man wieder zu Mengen zusammenfassen.
+  \item Ein ganz besonders hilfreicher Typ von Mengensystem.
+  \item Erlauft den Begriff der Paarung und damt den Vergleich der Mächtigkeiten, auch von unendlichen Mengen.
+\end{itemize}
 
-Eine Menge A kann viele und verschiedene Teilmengen haben.\\
-Diese kann man wieder zu Mengen zusammenfassen.\\
-Ein ganz besonders hilfreicher Typ von Mengensystem\\
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: 
+  Eine Beispiel einer Partition $\mathbb{N}_{10}$:\\
+  \\
+  $\mathbb{N}_{10} := \{0,1,2,3,4,5,6,7,8,9,10\}$\\
+  $S := \{\{1\},\{0,2,4,6,10\},\{3,6,9\},\{5,7\}\}$\\
+  \\
+  Es ist jedes Element enthalten.\\
+  In den Teilmengen gibt es keine Überschneidungen.
+\end{minipage}}
+\end{align}
 
-Eine Beispiel einer Partition $\mathbb{N}_{10}$:\\
-$\mathbb{N}_{10} := \{0,1,2,3,4,5,6,7,8,9,10\}$\\
-$S := \{\{1\},\{0,2,4,6,10\},\{3,6,9\},\{5,7\}\}$\\
-Es ist jedes Element enthalten.\\
-In den Teilmengen gibt es keine Überschneidungen.\\
-
-Anwendung:\\
+\textbf{Anwendung}:\\
+\\
 Die Untersuchung einer Menge kann deutlich vereinfacht werden.\\
 z.B. lässt sich $\mathbb{N}$ in gerade und ungerade Zahlen trennen.\\
 
 Die Anzahl Partitionen einer Menge M mit n Elementen lässt sich durch die sogenannte "Bell'sche Zahl" $B_n$ angeben.\\
 
 \begin{table}[ht]
-    \begin{tabular}{c|c|c|c|c|c}
-      Mächtigkeit der Menge n = & 2 & 4 & 6 & 10 & 16 \\ \hline
-      Bell'sche Zahl (anz. Partitionen) $B_n$ = & 2 & 15 & 203 & 115'975 & 10'480'142'147 \\
-    \end{tabular}
-    \quad
+  \begin{tabular}{c|c|c|c|c|c}
+    Mächtigkeit der Menge n = & 2 & 4 & 6 & 10 & 16 \\ \hline
+    Bell'sche Zahl (anz. Partitionen) $B_n$ = & 2 & 15 & 203 & 115'975 & 10'480'142'147 \\
+  \end{tabular}
+  \quad
 \end{table}
 
-\subsection{Die Unendlichkeit von Mengen}
+\subsection{Unendlichkeit von Mengen}
 
 Die Fragestellung die es zu klähren gillt:\\
+\\
 Lassen sich kardinalitäten von unendlichen Mengen vergleichen? Ja!\\
 Gibt es verschiedene Unendlichkeiten? Ja!\\
 
-Paarung zweier Mengen:\\
+\subsubsection{Paarung zweier Mengen}
+
 Sei: $A := \{1,2,3,4\}$ und $B := \{a,b,c,d\}$\\
 Teilmenge T1 := $\{(1,c),(2,b),(3,d),(4,a)\}$ ist eine Paarung von Menge A und B\\
 Teilmenge T2 := $\{(1,d),(2,c),(3,a),(4,ab)\}$ ist eine andere Paarung von Menge A und B\\
 Teilmenge T3 := $\{(1,d),(2,a),(3,c)\}$ ist keine Paarung von A und B. (4 und b fehlen).\\
 
-Zwei Mengen A und B (endlich oder unendlich) haben die gleiche Mächtigkeit $|A| = |B|$, wenn es eine Paarung von A und B gibt.\\
+Zwei Mengen A und B (endlich oder unendlich) haben die gleiche Mächtigkeit 
+$|A| = |B|$, wenn es eine Paarung von A und B gibt.
 
-Nummering, Ordnung:\\
-Wenn es eine Paarung von $\mathbb{N}$ mit einer Menge A gibt, so kann man diese Paarung als Nummerierung von A auffassen. \\
+\subsubsection{Nummering, Ordnung}
+
+Wenn es eine Paarung von $\mathbb{N}$ mit einer Menge A gibt, so kann man diese 
+Paarung als Nummerierung von A auffassen.\\
+\\
 z.B.: Menge $A := \{a*,a^2, a_3\}$\\
 ergibt: $\{(0,a*),(1,a^2),(2,a_3)\}$\\
-
+\\
 Wir nennen das n des Elements auch die Ordnung dieses Elements oder den Index von.\\
-
-Mit Hilfe der Paarung könen wir auch eine andere, gleichwertige Definition der unendlichen Mengen formulieren:\\
-Eine Menge A heisst unendlich, wenn es eine echte Teilmenge $T \subsetneq A$ gibt, sodass A und T eine Paarung sind.\\
+\\
+Mit Hilfe der Paarung könen wir auch eine andere, gleichwertige Definition der 
+unendlichen Mengen formulieren:\\
+Eine Menge A heisst unendlich, wenn es eine echte Teilmenge $T \subsetneq A$ 
+gibt, sodass A und T eine Paarung sind.\\
 Beispiel: $\mathbb{N}$ ist unendlich wegen der Paarung von A und B.\\
 $A := \mathbb{N}$, $B := \{1,2,3,4,5,6,...\}$\\
 Paarung = $\{(0,1),(1,2),(2,3),(3,4),...\}$\\
 Weil B eine echte Teilmenge von $\mathbb{N}$ ist (0 fehlt in B).\\
+\\
+Eine Menge heisst abzählbar unendlich, wenn es eine Paarung mit $\mathbb{N}$ 
+gibt, d.h. wenn sie gleichmächtig wie $\mathbb{N}$ ist.
+Endliche und abzählbar unendliche Mengen nennen wir zusammen auch abzählbare 
+Mengen.
 
-Eine Menge heisst abzählbar unendlich, wenn es eine Paarung mit $\mathbb{N}$ gibt, d.h. wenn sie gleichmächtig wie $\mathbb{N}$ ist.
-Endliche und abzählbar unendliche Mengen nennen wir zusammen auch abzählbare Mengen.\\
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: $\mathbb{Z}^-$, $\mathbb{Z}^+$, $\mathbb{Z}$\\
+  Die Menge $\mathbb{N}_g$ der geraden und die Menge $\mathbb{N}_u$ der 
+  ungeraden Zahlen sind alle gleichmächtig, also abzählbar unendlich.
+\end{minipage}}
+\end{align}
 
-Beispiel:\\
-$\mathbb{Z}^-$, $\mathbb{Z}^+$, $\mathbb{Z}$\\
-Die Menge $\mathbb{N}_g$ der geraden und die Menge $\mathbb{N}_u$ der ungeraden Zahlen sind alle gleichmächtig, also abzählbar unendlich.\\
+Eine Menge heisst überabzählbar unendlich, wenn sie unendlich ist und nicht 
+abzählbar (d.h. "mächtiger" als $\mathbb{N}$).
 
-Eine Menge heisst überabzählbar unendlich, wenn sie unendlich ist und nicht abzählbar (d.h. "mächtiger" als $\mathbb{N}$).\\
-Beispiel: $\mathbb{R}$ ist überabzählbar unendlich $|\mathbb{N}| < |\mathbb{R}|$.\\
+\begin{align}
+\fbox{\begin{minipage}{11.8cm}
+  \textbf{Beispiel}: $\mathbb{R}$ ist überabzählbar unendlich 
+  $|\mathbb{N}| < |\mathbb{R}|$.
+\end{minipage}}
+\end{align}
 
 Unendliche Mengen verhalten sich bedeuntend unintuitiver als endliche Mengen.\\
 
 Die Kontinuumhypothesis beschäftigt sich mit der Frage; Gibt es eine Menge A zwischen $|\mathbb{N}| < |A| < \mathbb{R}$?\\
 Die Antwort ist bis heute ungeklährt und wird deshalb verneint, also es gibt keine Menge, deren Mäctigkeit dazwischen liegt.
-
 
 \end{document}
